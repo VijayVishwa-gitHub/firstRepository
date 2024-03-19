@@ -1,4 +1,4 @@
-package seleniumCucumber;
+package testRunners;
 
 import org.junit.runner.RunWith;
 
@@ -9,6 +9,8 @@ import io.cucumber.junit.Cucumber;
 @CucumberOptions( features = {".//featureFile/cucum.feature"},
                                glue="cucum.stepDefinition",
 dryRun = false)
+
+
 public class testRunner {
 	
 //Checking GitHub
