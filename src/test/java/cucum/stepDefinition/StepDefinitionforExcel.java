@@ -14,7 +14,7 @@ public class StepDefinitionforExcel {
 	public void enter_email_and_password_from_excel(io.cucumber.datatable.DataTable dataTable) {
 	    
 	}
-s
+
 	@Then("user is able to login")
 	public void user_is_able_to_login() {
 	   
