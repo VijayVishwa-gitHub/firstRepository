@@ -6,3 +6,5 @@ Feature: Fetching data from Excel
       | Excel      | Location                  | Sheet  |
       | Testing xl | C:\\Users\\admin\\Desktop | sheet1 |
     Then user is able to login
+    
+    #Checking the maven
