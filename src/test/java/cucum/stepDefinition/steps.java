@@ -124,6 +124,7 @@ public class steps extends excelBase{
                      File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
 
                      FileUtils.copyFile(SrcFile, new File("fail.png"));
+                     driver.quit();
                      
                      
                 
@@ -134,7 +135,7 @@ public class steps extends excelBase{
             File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
 
             FileUtils.copyFile(SrcFile, new File("pass.png"));
-        	
+            driver.quit();
         }   
     }
 
