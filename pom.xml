@@ -100,5 +100,15 @@
 	</dependency>
 
 
+	<dependency>
+		<groupId>Selenium</groupId>
+		<artifactId>TestNG</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>opencart_cucumber_framework</groupId>
+		<artifactId>opencart_cucumber_framework</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
   </dependencies>
 </project>

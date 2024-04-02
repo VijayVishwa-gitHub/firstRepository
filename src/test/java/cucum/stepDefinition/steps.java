@@ -1,37 +1,70 @@
 package cucum.stepDefinition;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import baseClass.excelBase;
 import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class steps {
-	WebDriver driver;
+public class steps extends excelBase{
+	public static WebDriver driver;
+	/*
+	public WebDriver initializeBrowser() throws IOException {
+		
+		Properties prop = new Properties();
+		FileInputStream fil = new FileInputStream("C:\\Users\\Vijay\\Documents\\GitHub\\selenium.cucumber\\src\\main\\java\\seleniumCucumber\\global.properties");
+		prop.load(fil);
+		String name = prop.getProperty("browser");
+		
+		
+		if(name.equalsIgnoreCase("Chrome")) {
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Vijay\\Downloads\\Selenium Grid\\chromedriver.exe");
+			driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+			
+		}
+		else if(name.equalsIgnoreCase("Edge")) {
+			System.setProperty("webdriver.msedge.driver", "C:\\Users\\Vijay\\Downloads\\Selenium Grid\\msedgedriver.exe");
+			driver = new EdgeDriver();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		}
+		return driver;
 	
+	}*/
+
+
+	
+	
+
 	@Given("the user is on eCommerce Login page")
-	public void the_user_is_on_e_commerce_login_page() {
-	    driver = new EdgeDriver();
-	    driver.get("https://rahulshettyacademy.com/client");
-	    driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
-	   
+	public void the_user_is_on_e_commerce_login_page() throws IOException {
+		
+	driver = initializeBrowser();
+	//a.initializeBrowser();
+	//driver = new ChromeDriver();
+	driver.get("https://rahulshettyacademy.com/client");
+	driver.manage().window().maximize();
 	}
+	    
+	
 
 	@When("the user enters valid credentials\\(username: {string}, password: {string})")
 	public void the_user_enters_valid_credentials_username_password(String username, String pwd) {
@@ -98,11 +131,6 @@ public class steps {
         
       
     }
-
-	private void quitBrowser() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 
 

@@ -11,11 +11,11 @@ public class loginPage {
 	
 
 	
-	  public WebDriver driver;
+	  public static WebDriver driver;
 
 		public loginPage(WebDriver driver) {
 
-			this.driver=driver;
+			loginPage.driver=driver;
 
 			PageFactory.initElements(driver, this);
 
@@ -24,8 +24,8 @@ public class loginPage {
 		
 
 	    By user_name = By.id("userEmail");
-		By pass_word= By.id("userPassword");
-		By login = By.id("login");
+		static By pass_word= By.id("userPassword");
+		static By login = By.id("login");
 
 		public void URL() {
 			driver.get("https://rahulshettyacademy.com/client/auth/login");
@@ -36,11 +36,11 @@ public class loginPage {
 			driver.findElement(user_name).sendKeys(Username);	
 		}	
 
-		public void setpassword (String Password) {
+		public static void setpassword (String Password) {
 			driver.findElement(pass_word).sendKeys(Password);	
 		}
 
-		 public void clickloginbtn (){
+		 public static void clickloginbtn (){
 			driver.findElement(login).click();
 
 		}
