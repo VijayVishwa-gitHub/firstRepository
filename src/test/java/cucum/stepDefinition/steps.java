@@ -118,19 +118,34 @@ public class steps extends excelBase{
         
     	// this is for cucumber junit report
         if(scenario.isFailed()) {
-        	System.out.println("working");
+        	System.out.println("Not working");
         	 TakesScreenshot scrShot =((TakesScreenshot)driver);
 
                      File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
 
-                     FileUtils.copyFile(SrcFile, new File("ss.png"));
-        	            
+                     FileUtils.copyFile(SrcFile, new File("fail.png"));
+                     
+                     
+                
         }
-       
-         
-        
-      
+        else {
+        	TakesScreenshot scrShot =((TakesScreenshot)driver);
+
+            File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+
+            FileUtils.copyFile(SrcFile, new File("pass.png"));
+        	
+        }   
     }
+
+
+	@After(order=2)
+	private void closing_browser() {
+		 
+	      driver.quit();
+	      
+		
+	}
 	
 
 
