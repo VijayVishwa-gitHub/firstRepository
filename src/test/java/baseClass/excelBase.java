@@ -38,7 +38,10 @@ public class excelBase {
 	
 	}
 	public WebDriver launch_Application() throws IOException {
+	
 		driver = initializeBrowser();
+		check a = new check(driver);
+		a.getURL();
 		return driver;
 		
 		

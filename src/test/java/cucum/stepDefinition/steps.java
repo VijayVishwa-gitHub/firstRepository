@@ -56,12 +56,12 @@ public class steps extends excelBase{
 
 	@Given("the user is on eCommerce Login page")
 	public void the_user_is_on_e_commerce_login_page() throws IOException {
-		
-	driver = initializeBrowser();
+		driver = launch_Application();
+	//driver = initializeBrowser();
 	//a.initializeBrowser();
 	//driver = new ChromeDriver();
-	driver.get("https://rahulshettyacademy.com/client");
-	driver.manage().window().maximize();
+	//driver.get("https://rahulshettyacademy.com/client");
+	//driver.manage().window().maximize();
 	}
 	    
 	
