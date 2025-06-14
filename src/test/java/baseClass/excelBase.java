@@ -18,15 +18,15 @@ public class excelBase {
 	
 	public WebDriver initializeBrowser() throws IOException {
 		Properties prop = new Properties();
-		FileInputStream fil = new FileInputStream("C:\\Users\\Vijay\\Documents\\GitHub\\selenium.cucumber\\src\\main\\java\\seleniumCucumber\\global.properties");
+		FileInputStream fil = new FileInputStream("C:\\Users\\VijayBala\\git\\firstRepository\\src\\main\\java\\seleniumCucumber\\global.properties");
 		prop.load(fil);
 		String name = prop.getProperty("browser");
 		
 		
 		if(name.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Vijay\\Downloads\\Selenium Grid\\chromedriver.exe");
-			driver = new ChromeDriver();
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+			//System.setProperty("webdriver.chrome.driver", "C:\\Users\\VijayBala\\OneDrive\\Documents\\Selenium\\Driver\\chromedriver.exe");
+			ChromeDriver driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
 			
 		}
 		else if(name.equalsIgnoreCase("Edge")) {
@@ -44,7 +44,7 @@ public class excelBase {
 		a.getURL();
 		return driver;
 		
-		
+		//just checking
 		
 	}
 	

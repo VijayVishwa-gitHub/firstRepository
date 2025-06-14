@@ -12,7 +12,9 @@ Feature: User Login
     Given the user is on eCommerce Login page
     When the user enter credentials "<email>" and "<password>"
     Then the user clicks login button
+    Ands user should see failed message
     And the user should see a welcome message
+   
 
     Examples: 
       | email                     | password    |

@@ -28,7 +28,7 @@ public class loginPage {
 		static By login = By.id("login");
 
 		public void URL() {
-			driver.get("https://rahulshettyacademy.com/client/auth/login");
+			driver.get("https://rahulshettyacademy.com/client/dashboard/dash");
 			driver.manage().window().maximize();
 		}
 

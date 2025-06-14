@@ -100,9 +100,15 @@
 	</dependency>
 
 
+
 	<dependency>
-		<groupId>Selenium</groupId>
-		<artifactId>TestNG</artifactId>
+		<groupId>mvnTest</groupId>
+		<artifactId>testNG</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>Automation</groupId>
+		<artifactId>DataDrivenFramework</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</dependency>
 	<dependency>

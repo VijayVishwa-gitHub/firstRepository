@@ -24,20 +24,23 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class steps extends excelBase{
+public class steps{
+	
 	public static WebDriver driver;
-	/*
+	
 	public WebDriver initializeBrowser() throws IOException {
 		
 		Properties prop = new Properties();
-		FileInputStream fil = new FileInputStream("C:\\Users\\Vijay\\Documents\\GitHub\\selenium.cucumber\\src\\main\\java\\seleniumCucumber\\global.properties");
+		FileInputStream fil = new FileInputStream("C:\\Users\\VijayBala\\git\\firstRepository\\src\\main\\java\\seleniumCucumber\\global.properties");
 		prop.load(fil);
 		String name = prop.getProperty("browser");
 		
 		
 		if(name.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Vijay\\Downloads\\Selenium Grid\\chromedriver.exe");
-			driver = new ChromeDriver();
+			//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Vijay\\Downloads\\Selenium Grid\\chromedriver.exe");
+			//driver = new ChromeDriver();
+			ChromeDriver driver = new ChromeDriver();
+			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 			
 		}
@@ -48,20 +51,22 @@ public class steps extends excelBase{
 		}
 		return driver;
 	
-	}*/
+	}
 
 
 	
 	
 
 	@Given("the user is on eCommerce Login page")
-	public void the_user_is_on_e_commerce_login_page() throws IOException {
-		driver = launch_Application();
+	public WebDriver  the_user_is_on_e_commerce_login_page(WebDriver driver) throws IOException {
+		//driver = launch_Application();
 	//driver = initializeBrowser();
 	//a.initializeBrowser();
-	//driver = new ChromeDriver();
-	//driver.get("https://rahulshettyacademy.com/client");
-	//driver.manage().window().maximize();
+//	driver = new ChromeDriver();
+	driver.get("https://rahulshettyacademy.com/client");
+	driver.manage().window().minimize();
+	driver.quit();
+	return driver;
 	}
 	    
 	
@@ -88,7 +93,7 @@ public class steps extends excelBase{
 
 	@Then("the user should see a welcome message")
 	public void the_user_should_see_a_welcome_message() {
-		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(2));
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
 		w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("label[class='m-2 blink_me']")));
 		System.out.println(driver.findElement(By.cssSelector("label[class='m-2 blink_me']")).getText());
 	    boolean status=driver.findElement(By.cssSelector("label[class='m-2 blink_me']")).isDisplayed();
